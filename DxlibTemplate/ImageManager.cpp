@@ -3,9 +3,6 @@
 #include <vector>
 #include <string>
 
-//コンストラクタ
-ImageManager::ImageManager() { imgs_.resize(32); }
-
 //透過色設定
 void ImageManager::SetTrans(int R, int G, int B) { SetTransColor(R, G, B); }
 
