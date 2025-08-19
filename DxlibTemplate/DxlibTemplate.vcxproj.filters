@@ -13,10 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ヘッダー ファイル\core">
+      <UniqueIdentifier>{36e14c0e-9e15-43b0-a3a3-c2c7bc621ef5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\manager">
+      <UniqueIdentifier>{eae990df-abff-4618-96ba-322619494dd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\manager">
+      <UniqueIdentifier>{f0d43a3d-488a-4031-aa91-1f7faf9a72c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\constant">
+      <UniqueIdentifier>{89285bd9-21f6-4c7c-abb2-83dc27fe1793}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Singleton.h">
+      <Filter>ヘッダー ファイル\core</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>ヘッダー ファイル\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageID.h">
+      <Filter>ヘッダー ファイル\constant</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
