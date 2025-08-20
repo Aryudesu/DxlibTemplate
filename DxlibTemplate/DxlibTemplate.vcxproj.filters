@@ -25,6 +25,15 @@
     <Filter Include="ヘッダー ファイル\constant">
       <UniqueIdentifier>{89285bd9-21f6-4c7c-abb2-83dc27fe1793}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\core\time">
+      <UniqueIdentifier>{34a4b6f6-79f1-49fd-a713-dc44ce210d9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\core">
+      <UniqueIdentifier>{d3c8f744-ca8e-4c4f-93d4-b18f00e6356f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\core\time">
+      <UniqueIdentifier>{2ab2dbd1-8b70-4afa-a01f-dbae1e96218c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,6 +41,12 @@
     </ClCompile>
     <ClCompile Include="ImageManager.cpp">
       <Filter>ソース ファイル\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="FramePacer.cpp">
+      <Filter>ソース ファイル\core\time</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -43,6 +58,15 @@
     </ClInclude>
     <ClInclude Include="ImageID.h">
       <Filter>ヘッダー ファイル\constant</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>ヘッダー ファイル\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>ヘッダー ファイル\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="FramePacer.h">
+      <Filter>ヘッダー ファイル\core\time</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
