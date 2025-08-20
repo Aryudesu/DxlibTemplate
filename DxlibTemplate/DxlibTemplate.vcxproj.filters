@@ -68,7 +68,7 @@
     <ClInclude Include="ImageManager.h">
       <Filter>ヘッダー ファイル\manager</Filter>
     </ClInclude>
-    <ClInclude Include="ImageID.h">
+    <ClInclude Include="Ids.h">
       <Filter>ヘッダー ファイル\constant</Filter>
     </ClInclude>
     <ClInclude Include="SoundManager.h">

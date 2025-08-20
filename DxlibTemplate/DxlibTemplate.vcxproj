@@ -146,7 +146,7 @@
   <ItemGroup>
     <ClInclude Include="debug.h" />
     <ClInclude Include="FramePacer.h" />
-    <ClInclude Include="ImageID.h" />
+    <ClInclude Include="Ids.h" />
     <ClInclude Include="ImageManager.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="LoadIni.h" />

@@ -1,6 +1,7 @@
 #include "SoundManager.h"
 #include "Dxlib.h"
-#include "InputKey.h"
+#include "InputManager.h"
+#include "Ids.h"
 #include <vector>
 #include <string>
 
@@ -74,12 +75,12 @@ void SoundManager::ChangeVolume(int V) {
 }
 
 void SoundManager::ChangeBGMVolume(int V) {
-	ChangeVolumeSoundMem(255 * V / 100, BGM[BGM1]);
+	ChangeVolumeSoundMem(255 * V / 100, BGM[to_i(SoundID::BGM1)]);
 }
 
 void SoundManager::ConfBGMVolume() {
-	if (ReturnKey(KEY_INPUT_LSHIFT) > 0 || ReturnKey(KEY_INPUT_RSHIFT) > 0) {
-		if (ReturnKey(KEY_INPUT_SEMICOLON) > 0) {
+	if (InputManager::GetInstance().ReturnKey(KEY_INPUT_LSHIFT) > 0 || InputManager::GetInstance().ReturnKey(KEY_INPUT_RSHIFT) > 0) {
+		if (InputManager::GetInstance().ReturnKey(KEY_INPUT_SEMICOLON) > 0) {
 			VolumeCount++;
 			int tmp = 10;
 			if (VolumeCount > 50)tmp = 5;
@@ -90,7 +91,7 @@ void SoundManager::ConfBGMVolume() {
 				SoundManager::GetInstance().ChangeBGMVolume(Volume);
 			}
 		}
-		if (ReturnKey(KEY_INPUT_MINUS) > 0) {
+		if (InputManager::GetInstance().ReturnKey(KEY_INPUT_MINUS) > 0) {
 			VolumeCount++;
 			int tmp = 10;
 			if (VolumeCount > 50)tmp = 5;
@@ -101,7 +102,7 @@ void SoundManager::ConfBGMVolume() {
 				SoundManager::GetInstance().ChangeBGMVolume(Volume);
 			}
 		}
-		if (ReturnKey(KEY_INPUT_MINUS) == 0 && ReturnKey(KEY_INPUT_SEMICOLON) == 0)VolumeCount = 0;
+		if (InputManager::GetInstance().ReturnKey(KEY_INPUT_MINUS) == 0 && InputManager::GetInstance().ReturnKey(KEY_INPUT_SEMICOLON) == 0)VolumeCount = 0;
 	}
 	else {
 		VolumeCount = 0;
@@ -109,8 +110,8 @@ void SoundManager::ConfBGMVolume() {
 }
 
 void SoundManager::ConfVolume() {
-	if (ReturnKey(KEY_INPUT_LCONTROL) > 0 || ReturnKey(KEY_INPUT_RCONTROL) > 0) {
-		if (ReturnKey(KEY_INPUT_SEMICOLON) > 0) {
+	if (InputManager::GetInstance().ReturnKey(KEY_INPUT_LCONTROL) > 0 || InputManager::GetInstance().ReturnKey(KEY_INPUT_RCONTROL) > 0) {
+		if (InputManager::GetInstance().ReturnKey(KEY_INPUT_SEMICOLON) > 0) {
 			SEVolumeCount++;
 			int tmp = 10;
 			if (SEVolumeCount > 50)tmp = 5;
@@ -121,7 +122,7 @@ void SoundManager::ConfVolume() {
 				SoundManager::GetInstance().ChangeVolume(SEVolume);
 			}
 		}
-		if (ReturnKey(KEY_INPUT_MINUS) > 0) {
+		if (InputManager::GetInstance().ReturnKey(KEY_INPUT_MINUS) > 0) {
 			SEVolumeCount++;
 			int tmp = 10;
 			if (SEVolumeCount > 50)tmp = 5;
@@ -132,7 +133,7 @@ void SoundManager::ConfVolume() {
 				SoundManager::GetInstance().ChangeVolume(SEVolume);
 			}
 		}
-		if (ReturnKey(KEY_INPUT_MINUS) == 0 && ReturnKey(KEY_INPUT_SEMICOLON) == 0)SEVolumeCount = 0;
+		if (InputManager::GetInstance().ReturnKey(KEY_INPUT_MINUS) == 0 && InputManager::GetInstance().ReturnKey(KEY_INPUT_SEMICOLON) == 0)SEVolumeCount = 0;
 	}
 	else {
 		SEVolumeCount = 0;

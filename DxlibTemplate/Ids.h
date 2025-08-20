@@ -7,4 +7,11 @@ enum class ImageID : int {
     Item = 2,
 };
 
+enum class SoundID : int {
+    BGM1 = 1
+};
+
 constexpr int to_i(ImageID id) noexcept { return static_cast<int>(id); }
+
+constexpr int to_i(SoundID id) noexcept { return static_cast<int>(id); }
+
