@@ -34,6 +34,15 @@
     <Filter Include="ソース ファイル\core\time">
       <UniqueIdentifier>{2ab2dbd1-8b70-4afa-a01f-dbae1e96218c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\core\config">
+      <UniqueIdentifier>{cdc37f45-cf46-4618-bf06-380f7a94bd12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\core\config">
+      <UniqueIdentifier>{1bb6e8d1-db79-4c10-a824-e517cb918981}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\util">
+      <UniqueIdentifier>{87daca24-efe3-4860-a3a1-017d48a92fe4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -47,6 +56,9 @@
     </ClCompile>
     <ClCompile Include="FramePacer.cpp">
       <Filter>ソース ファイル\core\time</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadIni.cpp">
+      <Filter>ソース ファイル\core\config</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +79,12 @@
     </ClInclude>
     <ClInclude Include="FramePacer.h">
       <Filter>ヘッダー ファイル\core\time</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadIni.h">
+      <Filter>ヘッダー ファイル\core\config</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h">
+      <Filter>ヘッダー ファイル\util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

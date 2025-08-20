@@ -78,6 +78,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -110,6 +111,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -137,14 +139,17 @@
   <ItemGroup>
     <ClCompile Include="FramePacer.cpp" />
     <ClCompile Include="ImageManager.cpp" />
+    <ClCompile Include="LoadIni.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="debug.h" />
     <ClInclude Include="FramePacer.h" />
     <ClInclude Include="ImageID.h" />
     <ClInclude Include="ImageManager.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="LoadIni.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="SoundManager.h" />
   </ItemGroup>
