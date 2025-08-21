@@ -142,6 +142,7 @@
     <ClCompile Include="LoadIni.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="debug.h" />
@@ -150,8 +151,12 @@
     <ClInclude Include="ImageManager.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="LoadIni.h" />
+    <ClInclude Include="SceneBase.h" />
+    <ClInclude Include="SceneFactory.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

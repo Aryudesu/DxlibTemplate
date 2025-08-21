@@ -43,6 +43,15 @@
     <Filter Include="ヘッダー ファイル\util">
       <UniqueIdentifier>{87daca24-efe3-4860-a3a1-017d48a92fe4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\scene">
+      <UniqueIdentifier>{8e2b53a3-b4fd-48d7-a63b-5c923aa4c4b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\scene">
+      <UniqueIdentifier>{17e5ea3f-a875-4726-a9c8-d6e26956552c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\factory">
+      <UniqueIdentifier>{32441201-baa7-4a55-be23-02049a81905c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -59,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="LoadIni.cpp">
       <Filter>ソース ファイル\core\config</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>ソース ファイル\scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +97,18 @@
     </ClInclude>
     <ClInclude Include="debug.h">
       <Filter>ヘッダー ファイル\util</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBase.h">
+      <Filter>ヘッダー ファイル\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>ヘッダー ファイル\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>ヘッダー ファイル\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneFactory.h">
+      <Filter>ヘッダー ファイル\factory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
