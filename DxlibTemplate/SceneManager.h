@@ -1,15 +1,38 @@
 #pragma once
-#pragma once
 #include <memory>
-#include "SceneBase.h"
 #include "Ids.h"
+#include "SceneBase.h"
+#include "SceneFactory.h"
 
-// ここで各具体シーンのヘッダをinclude
-#include "TitleScene.h"
+class SceneManager {
+    std::unique_ptr<SceneBase> cur_;
+    bool quit_ = false;
 
-inline std::unique_ptr<SceneBase> CreateScene(SceneID id) {
-    switch (id) {
-    case SceneID::Title:  return std::make_unique<TitleScene>();
-    default:              return nullptr;
+public:
+    void startWith(SceneID first) {
+        cur_ = CreateScene(first);
+        if (cur_) cur_->Start();
+        else quit_ = true;
     }
-}
+
+    bool running() const { return !quit_; }
+
+    void updateAndDraw() {
+        if (!cur_) { quit_ = true; return; }
+
+        cur_->Update();
+        cur_->Draw();
+
+        if (cur_->IsEnd()) {
+            SceneID next = cur_->NextScene();
+            cur_->End();
+            cur_.reset();
+
+            if (next == SceneID::Quit) { quit_ = true; return; }
+
+            cur_ = CreateScene(next);
+            if (cur_) cur_->Start();
+            else quit_ = true;
+        }
+    }
+};

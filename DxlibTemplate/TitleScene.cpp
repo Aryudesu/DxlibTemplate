@@ -7,13 +7,18 @@
 
 void TitleScene::Start() {
 }
+
 void TitleScene::End() {
 }
+
 void TitleScene::Update() {
-    if (CheckHitKey(KEY_INPUT_ESCAPE)) { end_ = true; next_ = SceneID::Quit; }
+    if (CheckHitKey(KEY_INPUT_ESCAPE)) next_ = SceneID::Quit;
+    if (CheckHitKey(KEY_INPUT_RETURN)) next_ = SceneID::Game;
 }
+
 void TitleScene::Draw() {
-    DrawString(32, 32, "Game...", GetColor(255, 255, 255));
+    DrawString(32, 32, "Title: ENTER->Game, ESC->Quit", GetColor(255, 255, 255));
 }
-bool TitleScene::IsEnd() const { return end_; }
+
+bool TitleScene::IsEnd() const { return next_ != SceneID::Title; }
 SceneID TitleScene::NextScene() { return next_; }
