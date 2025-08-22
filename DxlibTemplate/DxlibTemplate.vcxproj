@@ -153,6 +153,7 @@
     <ClInclude Include="ImageManager.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="LoadIni.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneFactory.h" />
     <ClInclude Include="SceneManager.h" />

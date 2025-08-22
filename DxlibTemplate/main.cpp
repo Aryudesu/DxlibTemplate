@@ -1,16 +1,23 @@
 #include "DxLib.h"
 #include "SceneManager.h"
 #include "Ids.h"
+#include "InputManager.h"
+#include "Logger.h"
 #include <exception>
 #include <windows.h>
 
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow) {
+    Logger::I().init("logs/game.log", 3 * 1024 * 1024, Logger::Level::Debug);
     SceneManager mgr;
     mgr.startWith(SceneID::Title);
+    int counter = 0;
     try {
         ChangeWindowMode(TRUE), DxLib_Init(), SetDrawScreen(DX_SCREEN_BACK);
         while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0) {
+			InputManager::GetInstance().Update();
             mgr.updateAndDraw();
+            LOG_INFO("COUNTER : " + counter);
+            counter++;
         }
     }
     catch (const std::exception& e) {

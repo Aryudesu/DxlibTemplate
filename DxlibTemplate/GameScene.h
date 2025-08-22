@@ -5,7 +5,7 @@
 
 class GameScene : public SceneBase {
     bool end_ = false;
-    SceneID next_ = SceneID::Title;
+    SceneID next_ = SceneID::Game;
 
 public:
     void Start() override;

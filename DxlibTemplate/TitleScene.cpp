@@ -1,9 +1,10 @@
-// GameScene.h
 #pragma once
+#include "InputManager.h"
 #include "SceneBase.h"
 #include "TitleScene.h"
 #include "Ids.h"
 #include "DxLib.h"
+#include "Logger.h"
 
 void TitleScene::Start() {
 }
@@ -12,8 +13,11 @@ void TitleScene::End() {
 }
 
 void TitleScene::Update() {
-    if (CheckHitKey(KEY_INPUT_ESCAPE)) next_ = SceneID::Quit;
-    if (CheckHitKey(KEY_INPUT_RETURN)) next_ = SceneID::Game;
+    if (InputManager::GetInstance().isPressed(KEY_INPUT_ESCAPE)) next_ = SceneID::Quit;
+    if (InputManager::GetInstance().isPressed(KEY_INPUT_RETURN)) next_ = SceneID::Game;
+    if (next_ == SceneID::Game) {
+        LOG_INFO("GAME");
+	}
 }
 
 void TitleScene::Draw() {

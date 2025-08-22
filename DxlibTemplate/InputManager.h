@@ -13,9 +13,6 @@ class InputManager : public Singleton<InputManager> {
 private:
     std::array<uint8_t, KEY_NUM> tmp_{};     // GetHitKeyStateAllの生配列
     std::array<uint32_t, KEY_NUM> hold_{};   // 押下継続フレーム数
-
-    InputManager() = default;
-
 public:
     // 毎フレーム先頭で呼ぶ
     int Update() {
@@ -25,8 +22,7 @@ public:
             tmp_[i] = (raw[i] != 0) ? 1 : 0;
             if (tmp_[i]) {
                 if (hold_[i] < 0xFFFFFFFFu) ++hold_[i];
-            }
-            else {
+            } else {
                 hold_[i] = 0;
             }
         }

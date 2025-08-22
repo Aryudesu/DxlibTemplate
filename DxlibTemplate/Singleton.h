@@ -1,7 +1,4 @@
 #pragma once
-
-//シングルトンクラス
-
 template<class T>
 class Singleton
 {
@@ -11,7 +8,6 @@ public:
 		static T instance;
 		return instance;
 	}
-
 protected:
 	Singleton() = default;
 	virtual ~Singleton() = default;
