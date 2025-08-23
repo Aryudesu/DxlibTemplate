@@ -15,9 +15,6 @@ void TitleScene::End() {
 void TitleScene::Update() {
     if (InputManager::GetInstance().isPressed(KEY_INPUT_ESCAPE)) next_ = SceneID::Quit;
     if (InputManager::GetInstance().isPressed(KEY_INPUT_RETURN)) next_ = SceneID::Game;
-    if (next_ == SceneID::Game) {
-        LOG_INFO("GAME");
-	}
 }
 
 void TitleScene::Draw() {
