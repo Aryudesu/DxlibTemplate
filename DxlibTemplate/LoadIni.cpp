@@ -1,5 +1,5 @@
 #include "LoadIni.h"
-#include "DxLib.h" // Message() を使っているなら
+#include "DxLib.h"
 #include <cctype>
 #include <cstdlib>
 #include <sstream>
@@ -34,24 +34,21 @@ bool INIDat::iequals(const std::string& a, const std::string& b) {
     return true;
 }
 
-// ===== 既存コンストラクタ等（そのまま） =====
 INIDat::INIDat() {}
 INIDat::INIDat(std::string FileName) { DataInput(FileName); }
 INIDat::~INIDat() { DataDelete(); }
 
-// ===== 既存DataInputの安全化（function.h依存を排除） =====
 void INIDat::DataInput(std::string FileName) {
     int fp = FileRead_open(FileName.c_str());
-    if (fp == 0) { // 失敗
-        // ここはお好みで：例外 or Message だけ
-        // Message("LoadIni: File open failed");
+    if (fp == 0) {
+        // 失敗時処理
         return;
     }
 
     std::vector<std::vector<std::string>> tmpList;
     bool FirstSect = false;
 
-    char buf[1024]; // 256 -> 1024 に拡張
+    char buf[1024];
 
     while (FileRead_eof(fp) == 0) {
         if (FileRead_gets(buf, (int)sizeof(buf), fp) == -1) break;
@@ -59,7 +56,6 @@ void INIDat::DataInput(std::string FileName) {
         if (str.empty()) continue;
         if (str[0] == '#') continue;
 
-        // 行末コメント（; or #）を許容したい場合はここで切り落とす
         auto cpos = str.find_first_of("#;");
         if (cpos != std::string::npos) str = trim_copy(str.substr(0, cpos));
         if (str.empty()) continue;
@@ -147,10 +143,8 @@ std::vector<std::string> INIDat::GetData(std::string Sec, std::string Elem) {
 //    }
 //}
 
-// ===== 追加の“使い勝手API”実装 =====
 std::optional<std::vector<std::string>>
 INIDat::TryGet(const std::string& sec, const std::string& key) const {
-    // 既存構造を流用するため const_cast せずループ検索
     int idx = -1;
     for (int i = 0; i < (int)Section.size(); ++i) if (Section[i] == sec) { idx = i; break; }
     if (idx < 0) return std::nullopt;
